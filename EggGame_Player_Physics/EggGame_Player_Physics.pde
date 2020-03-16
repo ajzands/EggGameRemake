@@ -13,8 +13,8 @@ class Player {
 
     Player(color clr, float xPos, float yPos, float xSpeed) {
         c = color(255, 200, 200);
-        xpos = xPos;
-        ypos = yPos;
+        xpos = width/2;
+        ypos = 450;
         xspeed = xSpeed;
     }
 
@@ -40,8 +40,8 @@ class Player {
 
     void jump() {
         velocity = velocity + 0.25;
-        if(ypos + velocity > (height/2)) {
-            ypos = height/2;
+        if(ypos + velocity > (height)) {
+            ypos = 600;
             jump = false;
             velocity = velocityconst;
         } else {
@@ -51,7 +51,7 @@ class Player {
 }
 
 void setup() {
-    size(1000,1000);
+    size(500,500);
     player = new Player(color(255,0,0),0,height/2,5);
     velocityconst = -8.0;
     velocity = velocityconst;
