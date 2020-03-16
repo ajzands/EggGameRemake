@@ -12,7 +12,7 @@ class Player {
     float xspeed;
 
     Player(color clr, float xPos, float yPos, float xSpeed) {
-        c = clr;
+        c = color(255, 200, 200);
         xpos = xPos;
         ypos = yPos;
         xspeed = xSpeed;
@@ -22,7 +22,7 @@ class Player {
         rectMode(CENTER);
         noStroke();
         fill(c);
-        rect(xpos,ypos,20,20);
+        ellipse(xpos,ypos,20,30);
     }
 
     void drive(boolean dir) {
@@ -39,7 +39,7 @@ class Player {
     }
 
     void jump() {
-        velocity = velocity + 0.5;
+        velocity = velocity + 0.25;
         if(ypos + velocity > (height/2)) {
             ypos = height/2;
             jump = false;
